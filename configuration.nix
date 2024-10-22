@@ -94,7 +94,7 @@
   };
 
   environment.shellAliases = {
-    apply = "nixos-rebuild switch";
+    apply = "sudo nixos-rebuild switch";
   };
 
   # Install firefox.
