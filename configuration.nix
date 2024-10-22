@@ -87,6 +87,9 @@
       thunderbird
       gh
       git
+      lutris
+      vscode
+      steam
     ];
   };
 
