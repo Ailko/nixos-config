@@ -83,7 +83,9 @@
     description = "Ailko Claeys";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    #  thunderbird
+      thunderbird
+      gh
+      git
     ];
   };
 
@@ -97,7 +99,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    git
   #  wget
   ];
 
