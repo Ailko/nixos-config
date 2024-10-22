@@ -90,6 +90,10 @@
     ];
   };
 
+  environment.shellAliases = {
+    apply = "nixos-rebuild switch";
+  };
+
   # Install firefox.
   programs.firefox.enable = true;
 
