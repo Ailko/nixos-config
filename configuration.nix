@@ -93,10 +93,6 @@
     ];
   };
 
-  environment.shellAliases = {
-    apply = "sudo nixos-rebuild switch";
-  };
-
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -107,7 +103,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    dxvk
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
