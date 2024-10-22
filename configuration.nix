@@ -2,12 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      inputs.home-manager.nixosModules.default
       ./nvidia.nix
     ];
 
@@ -56,6 +57,8 @@
     variant = "";
   };
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -92,6 +95,13 @@
       steam
       vulkan-tools
     ];
+  };
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "ailko" = import ./home.nix;
+    };
   };
 
   # Install firefox.
