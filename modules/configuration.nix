@@ -6,30 +6,20 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+    [
       inputs.home-manager.nixosModules.default
-      ./nvidia.nix
     ];
+    
+  nixpkgs.config.allowUnfree = true;
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
+  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "Europe/Brussels";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -44,10 +34,7 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
@@ -86,29 +73,12 @@
     isNormalUser = true;
     description = "Ailko Claeys";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      thunderbird
-      gh
-      git
-      lutris
-      vscode
-      steam
-      vulkan-tools
-    ];
-  };
-
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "ailko" = import ./home.nix;
-    };
   };
 
   # Install firefox.
   programs.firefox.enable = true;
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
