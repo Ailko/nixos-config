@@ -20,4 +20,9 @@
     alias apply='sudo nixos-rebuild switch --flake /etc/nixos#default'
     alias update='sudo nix flake update'
   ";
+
+ programs.gnupg.agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-gtk2;
+  }; 
 }
