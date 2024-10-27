@@ -15,4 +15,9 @@
       "ailko" = import ./ailko.nix;
     };
   };
+
+  environment.interactiveShellInit = "
+    alias apply='sudo nixos-rebuild switch --flake /etc/nixos#default'
+    alias update='sudo nix flake update'
+  ";
 }
