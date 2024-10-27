@@ -26,6 +26,7 @@
     discord
     gnupg
     pinentry-gtk2
+    rustup
   ];
 
   # Home Manager can also manage your environment variables through
