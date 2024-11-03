@@ -27,6 +27,7 @@
     gnupg
     pinentry-gtk2
     rustup
+    cargo
   ];
 
   # Home Manager can also manage your environment variables through
