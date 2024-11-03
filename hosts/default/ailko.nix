@@ -26,7 +26,6 @@
     discord
     gnupg
     pinentry-gtk2
-    rustup
     cargo
   ];
 
