@@ -44,7 +44,15 @@
     variant = "";
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+    settings.experimental-features = [ "nix-command" "flakes" ];
+    gc = {  
+      automatic = true;
+      date = "10:00";
+      options = "--delete-generations 7d"
+    };
+  };
+
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
