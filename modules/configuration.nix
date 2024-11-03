@@ -48,8 +48,8 @@
     settings.experimental-features = [ "nix-command" "flakes" ];
     gc = {  
       automatic = true;
-      date = "10:00";
-      options = "--delete-generations 7d"
+      dates = "10:00";
+      options = "--delete-generations 7d";
     };
   };
 
