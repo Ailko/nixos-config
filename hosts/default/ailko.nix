@@ -27,6 +27,8 @@
     gnupg
     pinentry-gtk2
     cargo
+    nodejs
+    gcc
   ];
 
   # Home Manager can also manage your environment variables through
