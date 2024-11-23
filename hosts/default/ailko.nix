@@ -58,14 +58,16 @@
   };
 
   # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
-  programs.git = {
+  programs = {
+    home-manager.enable = true;
+    bash.enable = true;
+    git = {
     enable = true;
     userName = "Ailko";
     userEmail = "ailko.claeys@outlook.com";
     extraConfig = {
       commit.gpgsign = true;
+      };
     };
   };
 }
