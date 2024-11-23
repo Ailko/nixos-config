@@ -29,6 +29,7 @@
     cargo
     nodejs
     gcc
+    pkgs.onlyoffice-bin
   ];
 
   # Home Manager can also manage your environment variables through
