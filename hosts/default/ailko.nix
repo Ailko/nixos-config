@@ -29,8 +29,13 @@
     cargo
     nodejs
     gcc
+    whatsapp-for-linux
     pkgs.onlyoffice-bin
   ];
+
+  home.shellAliases = {
+    whatsapp = "WEBKIT_DISABLE_DMABUF_RENDERER=1 whatsapp-for-linux";
+  };
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
