@@ -62,11 +62,11 @@
     home-manager.enable = true;
     bash.enable = true;
     git = {
-    enable = true;
-    userName = "Ailko";
-    userEmail = "ailko.claeys@outlook.com";
-    extraConfig = {
-      commit.gpgsign = true;
+      enable = true;
+      userName = "Ailko";
+      userEmail = "ailko.claeys@outlook.com";
+      extraConfig = {
+        commit.gpgsign = true;
       };
     };
   };
