@@ -32,6 +32,7 @@
     whatsapp-for-linux
     pkgs.onlyoffice-bin
     spotify
+    python313
   ];
 
   home.shellAliases = {
