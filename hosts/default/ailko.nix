@@ -31,6 +31,7 @@
     gcc
     whatsapp-for-linux
     pkgs.onlyoffice-bin
+    spotify
   ];
 
   home.shellAliases = {
